@@ -1,7 +1,6 @@
 import './App.css';
-import NavBar from './components/NavBar/NavBar';
+import  NavBar from './components/NavBar/NavBar';
 import ItemListContainer from './components/itemListContainer/itemListContainer';
-import {BrowserRouter as Router, Switch, route} from 'react-router-dom'
 function App() {
   return (
     <div className="App">

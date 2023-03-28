@@ -1,5 +1,6 @@
 /*   < >  */
-import CartWidget from "../CartWidget/CartWidget";
+
+import  CartWidget from "../CartWidget/CartWidget";
 const NavBar = () => {
   return (
     <nav class="barra navbar navbar-expand-lg">
@@ -12,13 +13,13 @@ const NavBar = () => {
           <ul className="navbar-nav col-12">
             <div className="col-1"></div>
             <li className="nav-item col-1">
-              <a className="itemNav text-warning fs-3 fw-bold text-center" href="#">Aceites</a>
+              <button className="itemNav text-warning fs-3 fw-bold text-center" href="#">Aceites</button>
             </li>
             <li className="nav-item col-2">
-              <a className="itemNav text-warning fs-3 fw-bold text-center" href="#">Filtros</a>
+              <button className="itemNav text-warning fs-3 fw-bold text-center"  href="#">Filtros</button>
             </li>
             <li className="nav-item col-1">
-              <a className="itemNav text-warning fs-3 fw-bold text-center" href="#">Repuestos</a>
+              <button className="itemNav text-warning fs-3 fw-bold text-center"  href="#">Repuestos</button>
             </li> 
           </ul>
         </div>
