@@ -1,12 +1,9 @@
-import "./ItemListContainer.css";
+import "./filtros.css";
 import { useState, useEffect } from "react";
 import NavBar from "../NavBar/NavBar";
 import Item from "../Item/Item";
+import Counter from "../CounterWithCustomHook";
 const traerImagenes = require.context("../../assets/img", true);
-
-
-
-
 
 function ItemListContainer() {
   const [selected, setSelected] = useState(false);
@@ -14,42 +11,14 @@ function ItemListContainer() {
 
   useEffect(() => {
     console.clear();
-    
 
     const mockApiProducts = new Promise((resolved, rejected) => {
       setTimeout(() => {
         resolved([
           {
             id: 1,
-            category: "aceites",
-            name: "castrol",
-            description: "description",
-            stock: 10,
-            image: traerImagenes(`./castrol-edge.jpg`),
-          },
-          {
-            id: 2,
-            category: "aceites",
-            name: "gulf",
-            description: "description",
-            stock: 10,
-            image: traerImagenes(`./Aceite.jpg`),
-          },
-          {
-            id: 3,
-            category: "aceites",
-            name: "motul",
-            description: "description",
-            stock: 10,
-            image: traerImagenes(`./hidraulica.jpg`),
-          },
-
-
-
-          {
-            id: 1,
             category: "filtros",
-            name: "filtro",
+            name: "man",
             description: "description",
             stock: 10,
             image: traerImagenes(`./man.jpg`),
@@ -57,7 +26,7 @@ function ItemListContainer() {
           {
             id: 2,
             category: "filtros",
-            name: "filtro",
+            name: "fram",
             description: "description",
             stock: 10,
             image: traerImagenes(`./fram.jpg`),
@@ -65,43 +34,15 @@ function ItemListContainer() {
           {
             id: 3,
             category: "filtros",
-            name: "filtro",
+            name: "vinto",
             description: "description",
             stock: 10,
             image: traerImagenes(`./vinto.jpg`),
           },
-
-          {
-            id: 1,
-            category: "repuestos",
-            name: "repuesto",
-            description: "description",
-            stock: 10,
-            image: traerImagenes(`./amortiguador.jpg`),
-          },
-          {
-            id: 2,
-            category: "repuestos",
-            name: "repuesto",
-            description: "description",
-            stock: 10,
-            image: traerImagenes(`./neuma.png`),
-          },
-          {
-            id: 3,
-            category: "repuestos",
-            name: "repuesto",
-            description: "description",
-            stock: 10,
-            image: traerImagenes(`./disco.jpg`),
-          
-          },
-
         ]);
       }, 3000);
     });
-    
-  
+
     mockApiProducts
       .then((response) => {
         console.log(response);
@@ -135,9 +76,7 @@ function ItemListContainer() {
             </footer>
           </aside>
           <main>
-            <div className="tituloMain">
-              <b>Todos los productos</b>
-            </div>
+            <div className="tituloMain">Nuestros Filtros</div>
             <div className="productos">
               {products.length > 0
                 ? products.map((product) => {
@@ -169,5 +108,3 @@ function ItemListContainer() {
 }
 
 export default ItemListContainer;
-
-// <Counter />
