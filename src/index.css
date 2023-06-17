@@ -60,6 +60,15 @@ aside {
 .logo {
   font-weight: 400;
   font-size: 1.3rem;
+  color: yellow;
+  
+}
+
+.kang {
+  margin: 0;
+  padding: 0;
+  width: 5rem;
+  height: 5rem;
 }
 
 

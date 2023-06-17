@@ -7,9 +7,15 @@ const Counter = () => {
     <div className="botonCantidad">
       <h2 className="titleCant">Cantidad: {counter}</h2>
       <div className="botonIncrement">
-        <button className="botonMas" onClick={increment}>+</button>
-        <button className="botonMenos" onClick={decrement}>-</button>
-        <button className="botonReset" onClick={reset}>Reset</button>
+        <button className="botonMas" onClick={increment}>
+          +
+        </button>
+        <button className="botonMenos" onClick={decrement}>
+          -
+        </button>
+        <button className="botonReset" onClick={reset}>
+          Reset
+        </button>
       </div>
     </div>
   );
