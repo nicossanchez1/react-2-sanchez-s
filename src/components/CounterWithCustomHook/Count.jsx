@@ -1,7 +1,8 @@
 import useCount from "./useCount";
+import "./Count.css"
 
 const Counter = () => {
-  const { counter, increment, decrement, reset } = useCount();
+  const { counter, increment, decrement, reset, agregar } = useCount();
 
   return (
     <div className="botonCantidad">
@@ -13,8 +14,11 @@ const Counter = () => {
         <button className="botonMenos" onClick={decrement}>
           -
         </button>
+        <button className="botonReset" onClick={agregar}>
+          agregar
+        </button>
         <button className="botonReset" onClick={reset}>
-          Reset
+          reset
         </button>
       </div>
     </div>

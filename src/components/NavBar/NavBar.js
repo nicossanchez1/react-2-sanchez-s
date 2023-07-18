@@ -1,7 +1,26 @@
 /*   < >  */
+import { useContext } from "react";
 import { Link } from "react-router-dom";
-import CartWidget from "../CartWidget/CartWidget";
+import { ItemsContext } from "../../context/ItemsContext";
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+
+const styles = {
+  linkButton: {
+    textDecoration: "none",
+    color: "yellow",
+    fontSize: 18,
+    fontWeight: "bold",
+  },
+  purchaseButton: {
+    color: "grey",
+    fontSize: 18,
+    fontWeight: "bold",
+  },
+};
+
 const NavBar = () => {
+  const [items] = useContext(ItemsContext);
+
   return (
     <nav>
       <ul className="menu">
@@ -11,22 +30,27 @@ const NavBar = () => {
           </Link>
         </li>
         <li>
-          <Link className="boton-menu boton-categoria" to="/Category/men's clothing">
-            <i className="bi bi-hand-index-thumb"></i> men's clothing
+          <Link className="boton-menu boton-categoria" to="/Category/aceites">
+            <i className="bi bi-hand-index-thumb"></i> Aceites
           </Link>
         </li>
         <li>
-          <Link className="boton-menu boton-categoria" to="/Category/jewelery">
-            <i className="bi bi-hand-index-thumb"></i> Jewelery
+          <Link className="boton-menu boton-categoria" to="/Category/filtros">
+            <i className="bi bi-hand-index-thumb"></i> Filtros
           </Link>
         </li>
         <li>
-          <Link className="boton-menu boton-categoria" to="/Category/electronics">
-            <i className="bi bi-hand-index-thumb"></i> Electronics
+          <Link className="boton-menu boton-categoria" to="/Category/repuestos">
+            <i className="bi bi-hand-index-thumb"></i> Repuestos
           </Link>
         </li>
         <li>
-          <CartWidget />
+          <Link to="/CartShop" style={styles.linkButton}>
+            <div style={{ display: "flex", alignItems: "center" }}>
+              <ShoppingCartIcon />
+              {items.length}
+            </div>
+          </Link>
         </li>
       </ul>
     </nav>

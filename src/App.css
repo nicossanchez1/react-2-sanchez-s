@@ -73,20 +73,6 @@ main {
   font-size: 2rem;
 }
 
-.botonIncrement {
-  display: flex;
-  justify-content: space-around;
-}
-
-.botonMas {
-  width: 15%;
-}
-.botonMenos {
-  width: 15%;
-}
-.botonReset {
-  width: 20%;
-}
 
 
 

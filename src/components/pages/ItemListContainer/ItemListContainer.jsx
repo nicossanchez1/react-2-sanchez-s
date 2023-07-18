@@ -1,21 +1,31 @@
 import "./ItemListContainer.css";
 import { useState, useEffect } from "react";
 import Cards from "../../cards/Cards";
-import axios from "axios";
 import Aside from "../../aside/aside";
 import { Link } from "react-router-dom";
+import { db } from "../../../firebase/firebaseConfig";
+import { collection, query, getDocs } from "firebase/firestore";
+
+
 
 function ItemListContainer() {
-  const [autos, setAutos] = useState([]);
+  const [products, setProducts] = useState([]);
   console.clear();
-  console.log("Autos", autos);
+  console.log("productos", products);
 
   useEffect(() => {
-    // axios(`${process.env.REACT_APP_BASE_URL}`).then((json) => setAutos(json));
-    axios(`${process.env.REACT_APP_BASE_URL}`).then((json) => {
-      const nombres = json.data.map((modelos) => modelos);
-      setAutos(nombres);
-    });
+    const getProducts = async () => {
+      const q = query(collection(db, "products"));
+      const docs = [];
+      const querySnapshot = await getDocs(q);
+
+      querySnapshot.forEach((doc) => {
+        docs.push({ ...doc.data(), id: doc.id });
+      });
+      setProducts(docs);
+    };
+    getProducts();
+
   }, []);
   return (
     <div className="wrapper">
@@ -25,7 +35,7 @@ function ItemListContainer() {
           <b style={{ textTransform: "Capitalize" }}>Todos los productos</b>
         </div>
         <div className="productos">
-          {autos.map((auto) => {
+          {products.map((auto) => {
             return (
               <div style={{ margin: 10 }} key={auto.id}>
                 <Link to={`detail/${auto.id}`}>

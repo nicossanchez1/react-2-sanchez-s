@@ -14,12 +14,16 @@ const useCount = () => {
   const reset = () => {
     setCount(0);
   };
+  const agregar = () => {
+    setCount(counter);
+  };
 
   return {
     counter,
     increment,
     decrement,
     reset,
+    agregar
   };
 };
 
